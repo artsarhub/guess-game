@@ -18,6 +18,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var currentQuestionNumber: UILabel!
+    @IBOutlet weak var gamePassPercentage: UILabel!
     
     private var buttons: [UIButton] = []
     
@@ -27,6 +29,7 @@ class GameViewController: UIViewController {
             setNextQuestion()
         }
     }
+    
     @IBAction func onTouchGet2x2HintButton(_ sender: UIButton) {
         guard let incorrectAnsvers = gameSession?.get2x2Hint() else { return }
         sender.isEnabled = false
@@ -66,13 +69,24 @@ class GameViewController: UIViewController {
         gameSession = GameSession(questions: questions, gameStrategiesFacade: gameStrategiesFacade)
         gameSession?.gameDelegate = self
         
+        gameSession?.questionNumber.addObserver(self,
+                                                options: [.initial, .new],
+                                                closure: { [weak self] value, _ in
+                                                    self?.currentQuestionNumber.text = "Вопрос номер \(value)"
+                                                })
+        gameSession?.gamePassPercentage.addObserver(self,
+                                                    options: [.initial, .new],
+                                                    closure: { [weak self] value, _ in
+                                                        self?.gamePassPercentage.text = "Игра пройдена на \(value)%"
+                                                    })
+        
         Game.shared.session = gameSession
         
         setNextQuestion()
     }
     
     private func setNextQuestion() {
-        guard let question = gameSession?.getNexQuestion() else { return }
+        guard let question = gameSession?.getNextQuestion() else { return }
         buttons.forEach { $0.isEnabled = true }
         questionTextLabel.text = question.text
         button1.setTitle(question.answerOptions[0], for: .normal)

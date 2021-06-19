@@ -209,6 +209,23 @@
                                     <action selector="onTouchGet2x2HintButton:" destination="KsE-kI-4EP" eventType="touchUpInside" id="lkB-mJ-TW0"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HGz-va-bEo">
+                                <rect key="frame" x="10" y="697.33333333333337" width="41.333333333333336" height="48.666666666666629"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUe-gP-lM7">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOp-yf-Mvg">
+                                        <rect key="frame" x="0.0" y="28.333333333333258" width="41.333333333333336" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s2V-J7-hgb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -216,11 +233,13 @@
                             <constraint firstItem="E7B-oY-Q6I" firstAttribute="centerY" secondItem="28I-05-meu" secondAttribute="centerY" id="2D0-ix-kpi"/>
                             <constraint firstItem="5t8-dx-ofi" firstAttribute="centerX" secondItem="28I-05-meu" secondAttribute="centerX" id="BwY-EU-Kiw"/>
                             <constraint firstItem="s2V-J7-hgb" firstAttribute="trailing" secondItem="Vze-HX-6j4" secondAttribute="trailing" constant="5" id="PXb-P8-YeH"/>
+                            <constraint firstItem="s2V-J7-hgb" firstAttribute="bottom" secondItem="HGz-va-bEo" secondAttribute="bottom" constant="10" id="Sdi-Cl-sQP"/>
                             <constraint firstItem="E7B-oY-Q6I" firstAttribute="leading" secondItem="s2V-J7-hgb" secondAttribute="leading" id="Uy0-ry-LTi"/>
                             <constraint firstItem="s2V-J7-hgb" firstAttribute="trailing" secondItem="E7B-oY-Q6I" secondAttribute="trailing" id="VrM-ri-AAo"/>
                             <constraint firstItem="Vze-HX-6j4" firstAttribute="leading" secondItem="s2V-J7-hgb" secondAttribute="leading" constant="5" id="bIs-OH-JWf"/>
                             <constraint firstItem="s2V-J7-hgb" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5t8-dx-ofi" secondAttribute="bottom" id="lpt-1T-42b"/>
                             <constraint firstItem="5t8-dx-ofi" firstAttribute="top" secondItem="E7B-oY-Q6I" secondAttribute="bottom" constant="50" id="nZH-vK-loY"/>
+                            <constraint firstItem="HGz-va-bEo" firstAttribute="leading" secondItem="s2V-J7-hgb" secondAttribute="leading" constant="10" id="yaF-us-xhW"/>
                             <constraint firstItem="Vze-HX-6j4" firstAttribute="top" secondItem="s2V-J7-hgb" secondAttribute="top" constant="50" id="zgy-wE-Wcm"/>
                         </constraints>
                     </view>
@@ -230,6 +249,8 @@
                         <outlet property="button2" destination="73A-I7-aol" id="TEt-Dw-bG5"/>
                         <outlet property="button3" destination="gh1-iR-cMd" id="xva-uz-kz0"/>
                         <outlet property="button4" destination="v9d-fp-YV2" id="KEx-0a-f2F"/>
+                        <outlet property="currentQuestionNumber" destination="eUe-gP-lM7" id="TIi-XR-KIN"/>
+                        <outlet property="gamePassPercentage" destination="YOp-yf-Mvg" id="7rX-kQ-pxM"/>
                         <outlet property="questionTextLabel" destination="Vze-HX-6j4" id="9VC-zK-fhD"/>
                     </connections>
                 </viewController>

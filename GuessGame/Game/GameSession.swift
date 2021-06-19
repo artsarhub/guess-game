@@ -20,8 +20,15 @@ class GameSession {
     private var correctAnswersCount: Int = 0
     
     private(set) var is2x2HintUsed = false
+    let questionNumber: Observable<Int> = Observable(0)
+    let gamePassPercentage: Observable<Int> = Observable(0)
     
-    var currentQuestionIndex = -1
+    private var currentQuestionIndex = -1 {
+        didSet {
+            questionNumber.value = usedQuestionIndexes.count + 1
+            gamePassPercentage.value = Int(Float(usedQuestionIndexes.count) / Float(questions.count) * 100)
+        }
+    }
     
     init(questions: [Question], gameStrategiesFacade: GameStrategiesFacade) {
         self.questions = questions
@@ -35,7 +42,9 @@ class GameSession {
         gameDelegate?.endGame(with: correctAnswersCount)
     }
     
-    func getNexQuestion() -> Question {
+    // MARK: - Public
+    
+    func getNextQuestion() -> Question {
         let nextIndex = gameStrategiesFacade.getNextQuestionIndex(currentQuestionIndex: currentQuestionIndex, questionsCount: questions.count)
         currentQuestionIndex = nextIndex
         return questions[nextIndex]
