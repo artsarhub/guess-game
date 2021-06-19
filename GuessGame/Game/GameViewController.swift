@@ -46,7 +46,7 @@ class GameViewController: UIViewController {
         
         buttons = [button1, button2, button3, button4]
         
-        let questions = [
+        var questions = [
             Question(text: "Кто автор «Сказки о попе и работнике его Балде»?",
                      answerOptions: ["Лермонтов", "Пушкин", "Крылов", "Достоевский"],
                      correctAnswerIndex: 1),
@@ -63,6 +63,7 @@ class GameViewController: UIViewController {
                      answerOptions: ["Попало в лоб", "Залетело в рот", "Накапало в уши", "Бросилось в глаза"],
                      correctAnswerIndex: 3)
         ]
+        questions.append(contentsOf: Game.shared.userQuestions)
 
         let gameStrategiesFacade = GameStrategiesFacade(questionOrder: Game.shared.settings.questionOrder)
         

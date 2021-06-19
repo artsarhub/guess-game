@@ -12,6 +12,7 @@
 		AC45782C267E06F500D5A9A7 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45782B267E06F500D5A9A7 /* StoreService.swift */; };
 		AC45782E267E13F300D5A9A7 /* GameStrategiesFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45782D267E13F300D5A9A7 /* GameStrategiesFacade.swift */; };
 		AC457831267E59A500D5A9A7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC457830267E59A500D5A9A7 /* Observable.swift */; };
+		AC457833267E605200D5A9A7 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC457832267E605200D5A9A7 /* AddQuestionViewController.swift */; };
 		AC6C39B826764AE6004834E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39B726764AE6004834E5 /* AppDelegate.swift */; };
 		AC6C39BA26764AE6004834E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39B926764AE6004834E5 /* SceneDelegate.swift */; };
 		AC6C39BC26764AE6004834E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39BB26764AE6004834E5 /* MainViewController.swift */; };
@@ -31,6 +32,7 @@
 		AC45782B267E06F500D5A9A7 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		AC45782D267E13F300D5A9A7 /* GameStrategiesFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategiesFacade.swift; sourceTree = "<group>"; };
 		AC457830267E59A500D5A9A7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		AC457832267E605200D5A9A7 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 		AC6C39B426764AE6004834E5 /* GuessGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6C39B726764AE6004834E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC6C39B926764AE6004834E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				AC6C39D02676537F004834E5 /* GameViewController.swift */,
 				AC6C39D2267653B1004834E5 /* RecordsTableViewController.swift */,
 				AC457827267E031000D5A9A7 /* SettingsViewController.swift */,
+				AC457832267E605200D5A9A7 /* AddQuestionViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				AC6C39BC26764AE6004834E5 /* MainViewController.swift in Sources */,
 				AC6C39CF26764CC9004834E5 /* Question.swift in Sources */,
 				AC6C39B826764AE6004834E5 /* AppDelegate.swift in Sources */,
+				AC457833267E605200D5A9A7 /* AddQuestionViewController.swift in Sources */,
 				AC6C39BA26764AE6004834E5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

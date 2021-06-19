@@ -10,6 +10,7 @@ import Foundation
 enum StoreKey: String {
     case records = "records"
     case settings = "settings"
+    case questions = "questions"
 }
 
 class StoreService {

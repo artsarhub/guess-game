@@ -20,6 +20,7 @@ class Game {
     static let shared: Game = Game()
     
     private(set) var records: [Record] = []
+    private(set) var userQuestions: [Question] = []
     private(set) var settings = Settings()
     private let storeService = StoreService()
     
@@ -32,6 +33,7 @@ class Game {
     private func restoreState() {
         records = ((try? storeService.load(for: .records)) ?? []).sorted { $0.date > $1.date }
         settings = (try? storeService.load(for: .settings)) ?? Settings()
+        userQuestions = (try? storeService.load(for: .questions)) ?? []
     }
     
     // MARK: - Public
@@ -49,5 +51,10 @@ class Game {
     func saveSettings(_ settings: Settings) {
         self.settings = settings
         try? storeService.save(settings, for: .settings)
+    }
+    
+    func addUserQuestion(_ question: Question) {
+        userQuestions.append(question)
+        try? storeService.save(userQuestions, for: .questions)
     }
 }
