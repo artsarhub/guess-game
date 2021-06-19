@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ga4-ug-qZr">
-                                <rect key="frame" x="147" y="375.66666666666669" width="96" height="93"/>
+                                <rect key="frame" x="147" y="348.66666666666669" width="96" height="147"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCD-Ur-Ee4">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="39"/>
@@ -33,6 +33,14 @@
                                         <state key="normal" title="Результаты"/>
                                         <connections>
                                             <segue destination="B8Y-1P-sXR" kind="show" id="Fy4-nx-SH1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egK-c4-zdo">
+                                        <rect key="frame" x="0.0" y="113" width="96" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Настройки"/>
+                                        <connections>
+                                            <segue destination="Oya-It-lfh" kind="show" id="rUc-Lg-07s"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -93,7 +101,53 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yn7-4P-6jB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008" y="425"/>
+            <point key="canvasLocation" x="1040" y="131"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="SJX-Bx-PRx">
+            <objects>
+                <viewController id="Oya-It-lfh" customClass="SettingsViewController" customModule="GuessGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u2M-yX-gDe">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IWu-zG-Fsh">
+                                <rect key="frame" x="50.666666666666657" y="367" width="289" height="56.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Порядок вопросов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07D-EY-2rJ">
+                                        <rect key="frame" x="69.666666666666671" y="0.0" width="149.66666666666663" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uJU-qW-Vbr">
+                                        <rect key="frame" x="0.0" y="25.333333333333314" width="289" height="32"/>
+                                        <segments>
+                                            <segment title="Последовательный"/>
+                                            <segment title="Случайный"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="onQuestionOrderChanged:" destination="Oya-It-lfh" eventType="valueChanged" id="EOV-eR-QLo"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6YD-KZ-WCX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IWu-zG-Fsh" firstAttribute="centerX" secondItem="u2M-yX-gDe" secondAttribute="centerX" id="7uX-rl-fgI"/>
+                            <constraint firstItem="IWu-zG-Fsh" firstAttribute="centerY" secondItem="u2M-yX-gDe" secondAttribute="centerY" id="EMn-O7-jnR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UiO-Nw-O5V"/>
+                    <connections>
+                        <outlet property="questionOrderSegmentedControl" destination="uJU-qW-Vbr" id="fCm-EB-ICz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Orc-Rp-8Dj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="828"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="2WK-IW-Jwf">
@@ -103,7 +157,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vze-HX-6j4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vze-HX-6j4">
                                 <rect key="frame" x="5" y="50" width="380" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -181,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0G-tH-5kC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007.6923076923076" y="-237.44075829383885"/>
+            <point key="canvasLocation" x="1040" y="-537"/>
         </scene>
     </scenes>
     <resources>

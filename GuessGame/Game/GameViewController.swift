@@ -61,7 +61,9 @@ class GameViewController: UIViewController {
                      correctAnswerIndex: 3)
         ]
 
-        gameSession = GameSession(questions: questions)
+        let gameStrategiesFacade = GameStrategiesFacade(questionOrder: Game.shared.settings.questionOrder)
+        
+        gameSession = GameSession(questions: questions, gameStrategiesFacade: gameStrategiesFacade)
         gameSession?.gameDelegate = self
         
         Game.shared.session = gameSession

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC457826267B2D5300D5A9A7 /* QuestionOrderStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC457825267B2D5300D5A9A7 /* QuestionOrderStrategy.swift */; };
+		AC457828267E031000D5A9A7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC457827267E031000D5A9A7 /* SettingsViewController.swift */; };
+		AC45782C267E06F500D5A9A7 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45782B267E06F500D5A9A7 /* StoreService.swift */; };
+		AC45782E267E13F300D5A9A7 /* GameStrategiesFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45782D267E13F300D5A9A7 /* GameStrategiesFacade.swift */; };
 		AC6C39B826764AE6004834E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39B726764AE6004834E5 /* AppDelegate.swift */; };
 		AC6C39BA26764AE6004834E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39B926764AE6004834E5 /* SceneDelegate.swift */; };
 		AC6C39BC26764AE6004834E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39BB26764AE6004834E5 /* MainViewController.swift */; };
@@ -18,10 +22,13 @@
 		AC6C39D3267653B1004834E5 /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39D2267653B1004834E5 /* RecordsTableViewController.swift */; };
 		AC6C39D52676545C004834E5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39D42676545C004834E5 /* Game.swift */; };
 		AC6C39D72676546B004834E5 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39D62676546B004834E5 /* GameSession.swift */; };
-		AC6C39D926765579004834E5 /* RecordsStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C39D826765579004834E5 /* RecordsStoreService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC457825267B2D5300D5A9A7 /* QuestionOrderStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOrderStrategy.swift; sourceTree = "<group>"; };
+		AC457827267E031000D5A9A7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AC45782B267E06F500D5A9A7 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		AC45782D267E13F300D5A9A7 /* GameStrategiesFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStrategiesFacade.swift; sourceTree = "<group>"; };
 		AC6C39B426764AE6004834E5 /* GuessGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6C39B726764AE6004834E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC6C39B926764AE6004834E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +42,6 @@
 		AC6C39D2267653B1004834E5 /* RecordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTableViewController.swift; sourceTree = "<group>"; };
 		AC6C39D42676545C004834E5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		AC6C39D62676546B004834E5 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
-		AC6C39D826765579004834E5 /* RecordsStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsStoreService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC457824267B2D0A00D5A9A7 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				AC457825267B2D5300D5A9A7 /* QuestionOrderStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
 		AC6C39AB26764AE6004834E5 = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +96,12 @@
 		AC6C39CB26764B35004834E5 /* Fundamental */ = {
 			isa = PBXGroup;
 			children = (
+				AC457824267B2D0A00D5A9A7 /* Strategies */,
 				AC6C39B726764AE6004834E5 /* AppDelegate.swift */,
 				AC6C39B926764AE6004834E5 /* SceneDelegate.swift */,
 				AC6C39D42676545C004834E5 /* Game.swift */,
-				AC6C39D826765579004834E5 /* RecordsStoreService.swift */,
+				AC45782B267E06F500D5A9A7 /* StoreService.swift */,
+				AC45782D267E13F300D5A9A7 /* GameStrategiesFacade.swift */,
 			);
 			path = Fundamental;
 			sourceTree = "<group>";
@@ -105,6 +121,7 @@
 				AC6C39BB26764AE6004834E5 /* MainViewController.swift */,
 				AC6C39D02676537F004834E5 /* GameViewController.swift */,
 				AC6C39D2267653B1004834E5 /* RecordsTableViewController.swift */,
+				AC457827267E031000D5A9A7 /* SettingsViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -180,7 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC6C39D3267653B1004834E5 /* RecordsTableViewController.swift in Sources */,
-				AC6C39D926765579004834E5 /* RecordsStoreService.swift in Sources */,
+				AC457826267B2D5300D5A9A7 /* QuestionOrderStrategy.swift in Sources */,
+				AC45782E267E13F300D5A9A7 /* GameStrategiesFacade.swift in Sources */,
+				AC457828267E031000D5A9A7 /* SettingsViewController.swift in Sources */,
+				AC45782C267E06F500D5A9A7 /* StoreService.swift in Sources */,
 				AC6C39D12676537F004834E5 /* GameViewController.swift in Sources */,
 				AC6C39D72676546B004834E5 /* GameSession.swift in Sources */,
 				AC6C39D52676545C004834E5 /* Game.swift in Sources */,

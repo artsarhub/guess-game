@@ -12,11 +12,16 @@ struct Record: Codable {
     let date: Date
 }
 
+struct Settings: Codable {
+    var questionOrder: Int = 0
+}
+
 class Game {
     static let shared: Game = Game()
     
     private(set) var records: [Record] = []
-    private let recordsStoreService = RecordsStoreService()
+    private(set) var settings = Settings()
+    private let storeService = StoreService()
     
     var session: GameSession?
     
@@ -25,16 +30,24 @@ class Game {
     }
     
     private func restoreState() {
-        records = ((try? recordsStoreService.load()) ?? []).sorted { $0.date > $1.date }
+        records = ((try? storeService.load(for: .records)) ?? []).sorted { $0.date > $1.date }
+        settings = (try? storeService.load(for: .settings)) ?? Settings()
     }
+    
+    // MARK: - Public
     
     func addRecord(_ record: Record) {
         records.insert(record, at: 0)
-        try? recordsStoreService.save(records)
+        try? storeService.save(records, for: .records)
     }
     
     func clearRecords() {
         records = []
-        try? recordsStoreService.save(records)
+        try? storeService.save(records, for: .records)
+    }
+    
+    func saveSettings(_ settings: Settings) {
+        self.settings = settings
+        try? storeService.save(settings, for: .settings)
     }
 }

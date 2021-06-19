@@ -14,15 +14,18 @@ protocol GameSessionDelegate: AnyObject {
 class GameSession {
     weak var gameDelegate: GameSessionDelegate?
     
+    private let gameStrategiesFacade: GameStrategiesFacade
     private let questions: [Question]
+    private var usedQuestionIndexes: [Int] = []
     private var correctAnswersCount: Int = 0
     
     private(set) var is2x2HintUsed = false
     
     var currentQuestionIndex = -1
     
-    init(questions: [Question]) {
+    init(questions: [Question], gameStrategiesFacade: GameStrategiesFacade) {
         self.questions = questions
+        self.gameStrategiesFacade = gameStrategiesFacade
     }
     
     private func onGameEnd() {
@@ -33,16 +36,18 @@ class GameSession {
     }
     
     func getNexQuestion() -> Question {
-        currentQuestionIndex += 1
-        return questions[currentQuestionIndex]
+        let nextIndex = gameStrategiesFacade.getNextQuestionIndex(currentQuestionIndex: currentQuestionIndex, questionsCount: questions.count)
+        currentQuestionIndex = nextIndex
+        return questions[nextIndex]
     }
     
     func checkAnswer(answerIndex: Int) -> Bool {
         let question = questions[currentQuestionIndex]
         
         if question.correctAnswerIndex == answerIndex {
+            usedQuestionIndexes.append(currentQuestionIndex)
             correctAnswersCount += 1
-            if currentQuestionIndex == questions.count - 1 {
+            if usedQuestionIndexes.count == questions.count {
                 onGameEnd()
             } else {
                 return true
